@@ -1,0 +1,52 @@
+@use "../../styles/mixins";
+@use "../../styles/colors";
+@use "../../styles/typography";
+
+.textfield {
+  @include mixins.wh(100%, 90px);
+
+  &_label {
+    @include mixins.wh(100%, 25%);
+    @include typography.text-lg(500);
+    color: colors.$colors-primary-10;
+  }
+  &_box,
+  &_box-error {
+    @include mixins.wh(100%, 50%);
+    @include mixins.d-flex(space-between, center);
+    border-radius: 4px;
+    padding: 0 8px;
+
+    &:hover {
+      border: 1px solid colors.$colors-secondary-06;
+    }
+
+    &-input {
+      @include typography.text-lg(300);
+      @include mixins.wh(100%, 100%);
+      background-color: transparent;
+      border: none;
+      outline: none;
+    }
+  }
+  &_box {
+    border: 1px solid colors.$colors-primary-10;
+    &:focus-within {
+      outline: 2px solid colors.$colors-secondary-05;
+      border: 1px solid colors.$colors-secondary-04;
+    }
+
+    &-error {
+      border: 1px solid colors.$colors-red-06;
+      &:focus-within {
+        outline: 2px solid colors.$colors-red-05;
+        border: 1px solid colors.$colors-red-04;
+      }
+    }
+  }
+  &_error {
+    @include mixins.wh(100%, 25%);
+    @include typography.text-base(400);
+    color: colors.$colors-red-06;
+  }
+}

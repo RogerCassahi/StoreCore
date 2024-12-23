@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+$font: "Inter", serif;
+
+@mixin font($fs, $fw, $lh) {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-family: $font;
+  font-size: $fs;
+  font-weight: $fw;
+  line-height: $lh;
+}
+
+@mixin text-xs($fw) {
+  @include font(0.75rem, $fw, 1rem);
+}
+@mixin text-sm($fw) {
+  @include font(0.875rem, $fw, 1.25rem);
+}
+@mixin text-base($fw) {
+  @include font(1rem, $fw, 1.5rem);
+}
+@mixin text-lg($fw) {
+  @include font(1.125rem, $fw, 1.75rem);
+}
+@mixin text-xl($fw) {
+  @include font(1.25rem, $fw, 1.75rem);
+}
+@mixin text-2xl($fw) {
+  @include font(1.5rem, $fw, 2rem);
+}
+@mixin text-3xl($fw) {
+  @include font(1.875rem, $fw, 2.25rem);
+}
+@mixin text-4xl($fw) {
+  @include font(2.25rem, $fw, 2.5rem);
+}
+@mixin text-5xl($fw) {
+  @include font(3rem, $fw, 1);
+}
+@mixin text-6xl($fw) {
+  @include font(3.75rem, $fw, 1);
+}
+@mixin text-7xl($fw) {
+  @include font(4.5rem, $fw, 1);
+}
+@mixin text-8xl($fw) {
+  @include font(6rem, $fw, 1);
+}
+@mixin text-9xl($fw) {
+  @include font(8rem, $fw, 1);
+}

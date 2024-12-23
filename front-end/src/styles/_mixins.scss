@@ -1,0 +1,37 @@
+@mixin wh($w,$h){
+  width: $w;
+  height: $h;
+}
+
+@mixin min-wh($w,$h){
+  min-width: $w;
+  min-height: $h;
+}
+
+@mixin max-wh($w,$h){
+  max-width: $w;
+  max-height: $h;
+}
+
+@mixin d-flex($j,$a){
+  display: flex;
+  justify-content: $j;
+  align-items: $a;
+}
+
+@mixin d-column($j,$a){
+  @include d-flex($j,$a);
+  flex-direction:column;
+}
+
+@mixin d-grid($c,$r,$a){
+  display: grid;
+  grid-template-columns: $c;
+  grid-template-rows: $r;
+  grid-template-areas: $a;
+}
+
+@mixin colors($bg,$c){
+  background-color: $bg;
+  color: $c;
+}

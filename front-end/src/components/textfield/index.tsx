@@ -18,14 +18,20 @@ export const Textfield = ({
 }: TextfieldProps) => {
   return (
     <div className={styles["textfield"]}>
-      <label className={styles["textfield_label"]}>{label}</label>
+      <label className={styles["textfield_label"]} htmlFor={label}>
+        {label}
+      </label>
       <div
         className={
           error ? styles["textfield_box-error"] : styles["textfield_box"]
         }
       >
         {prefix && prefix}
-        <input {...input} className={styles["textfield_box-input"]} />
+        <input
+          {...input}
+          id={label}
+          className={styles["textfield_box-input"]}
+        />
         {suffix && suffix}
       </div>
       <span className={styles["textfield_error"]}>{error}</span>

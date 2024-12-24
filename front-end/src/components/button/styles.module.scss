@@ -1,0 +1,63 @@
+@use "../../styles/mixins";
+@use "../../styles/colors";
+@use "../../styles/typography";
+
+@mixin button($bg, $c, $hbg, $hc) {
+  @include mixins.wh(100%, 45px);
+  @include mixins.colors($bg, $c);
+  @include typography.text-lg(500);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: $bg;
+  color: $c;
+  transition: background-color 0.5s linear;
+
+  &:hover {
+    @include mixins.colors($hbg, $hc);
+  }
+}
+.button {
+  &_primary {
+    @include button(
+      colors.$colors-secondary-06,
+      colors.$colors-primary-01,
+      colors.$colors-secondary-05,
+      colors.$colors-primary-01
+    );
+  }
+  &_secondary {
+    @include button(
+      transparent,
+      colors.$colors-secondary-10,
+      colors.$colors-secondary-02,
+      colors.$colors-secondary-10
+    );
+    border: 1px solid colors.$colors-secondary-10;
+  }
+  &_disabled {
+    @include button(
+      colors.$colors-primary-05,
+      colors.$colors-primary-02,
+      colors.$colors-primary-05,
+      colors.$colors-primary-02
+    );
+    cursor: not-allowed;
+  }
+  &_danger {
+    @include button(
+      colors.$colors-red-07,
+      colors.$colors-primary-01,
+      colors.$colors-red-06,
+      colors.$colors-primary-01
+    );
+  }
+  &_text {
+    @include button(
+      transparent,
+      colors.$colors-primary-10,
+      transparent,
+      colors.$colors-secondary-08
+    );
+  }
+}

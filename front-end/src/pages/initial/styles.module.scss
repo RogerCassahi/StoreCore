@@ -1,0 +1,15 @@
+@use "../../styles/mixins";
+@use "../../styles/screens";
+
+.initial {
+  @include mixins.wh(100vw, 100vh);
+  @include mixins.d-flex(center, center);
+  &_section {
+    padding: 24px;
+    @include mixins.wh(100%, auto);
+
+    @include screens.screen-md() {
+      @include mixins.wh(400px, auto);
+    }
+  }
+}

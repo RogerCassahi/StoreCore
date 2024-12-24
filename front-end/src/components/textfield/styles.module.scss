@@ -22,8 +22,9 @@
     }
 
     &-input {
-      @include typography.text-lg(300);
+      @include typography.text-lg(400);
       @include mixins.wh(100%, 100%);
+      padding: 0px 4px;
       background-color: transparent;
       border: none;
       outline: none;

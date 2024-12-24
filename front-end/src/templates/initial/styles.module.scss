@@ -1,0 +1,16 @@
+@use "../../styles/mixins";
+
+.form,
+.form_row,
+.form_column {
+  @include mixins.wh(100%, auto);
+  gap: 12px;
+}
+.form,
+.form_column {
+  @include mixins.d-column(space-between, center);
+}
+
+.form_row {
+  @include mixins.d-flex(space-between, center);
+}
